@@ -1,0 +1,17 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "port": "5432",
+    "username": "root",
+    "password": "root",
+    "database": "tech_diversity",
+    "synchronize": false,
+    "dropSchema": false,
+    "logging": true,
+    "entities": ["src/**/*.entity.ts"],
+    "migrations": ["src/rdbs/migrations/**/*.ts"],
+    "cli": {
+      "entitiesDir": "src",
+      "migrationsDir": "src/rdbs/migrations"
+    }
+  }
