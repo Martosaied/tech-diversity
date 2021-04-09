@@ -37,6 +37,10 @@ $ git clone https://github.com/Martosaied/tech-diversity
 # Access
 $ cd tech-diversity
 
+# Install web and api deps
+$ cd tech-diversity-api && npm i
+$ cd ../tech-diversity-web && npm i
+
 # Go to docker folder
 $ cd docker
 
