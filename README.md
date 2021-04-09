@@ -10,8 +10,6 @@
 
 
 <p align="center">
-  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
-  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
@@ -19,23 +17,6 @@
 </p>
 
 <br>
-
-## :dart: About ##
-
-This is a Rest implementation for a Fibonacci calculator. I used a simple algorithm combined with caching values on memory. This allow me to speed up the caluclation by caching the previous values.
-I also cache the http calls.
-
-I decided to use NestJS since it has a pretty easy installation process and cames with a lot of helpful packages and some boilerplate code to set-up the basics even faster.
-Also because it's my daily working frameworks that i use on microservices and i feel very comfortable using it.
-
-I also decided using a 3rd party package to cache results and calls to have more reliability on that part.
-
-I added validation for non-integer values or strings.
-
-## :sparkles: Features ##
-
-:heavy_check_mark: In-memory cache \
-:heavy_check_mark: Per-endpoint cache
 
 ## :rocket: Technologies ##
 
