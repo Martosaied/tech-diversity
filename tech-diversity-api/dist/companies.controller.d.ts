@@ -6,7 +6,7 @@ export declare class CompanyController {
     constructor(companyService: CompanyService);
     create(req: CompanyDto): Promise<Company>;
     read(): Promise<Company[]>;
-    readOne(id: number): Promise<Company>;
-    update(id: number, req: CompanyDto): Promise<Company>;
-    delete(id: number): Promise<Company>;
+    readOne(id: string): Promise<Company>;
+    update(id: string, req: CompanyDto): Promise<Company>;
+    delete(id: string): Promise<Company>;
 }

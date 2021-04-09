@@ -5,8 +5,8 @@ export declare class CompanyService {
     private companyRepository;
     constructor(companyRepository: Repository<Company>);
     create(data: CompanyDto): Promise<Company>;
-    findById(id: number): Promise<Company>;
+    findById(id: string): Promise<Company>;
     findAll(): Promise<Company[]>;
-    update(id: number, data: CompanyDto): Promise<Company>;
-    delete(id: number): Promise<Company>;
+    update(id: string, data: CompanyDto): Promise<Company>;
+    delete(id: string): Promise<Company>;
 }

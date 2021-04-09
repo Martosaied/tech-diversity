@@ -3,19 +3,23 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { DataGrid } from '@material-ui/data-grid';
 import { ButtonGroup, Button } from '@material-ui/core';
-import { AddCompanyForm } from './components/addCompanyForm';
+import { AddCompanyForm } from './components/add-company-form/addCompanyForm';
+import { CompareCompanies } from './components/compare-companies/compareCompanies';
+
+const API = 'http://localhost:8000';
 
 const App = () => {
 
   const [companies, setCompanies] = useState([]);
   const [isAddCompanyFormOpen, setAddCompanyFormOpen] = useState(false);
+  const [isCompareCompaniesOpen, setCompareCompaniesOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get('http://localhost:8000/companies');
+      const response = await axios.get(`${API}/companies`);
       setCompanies(response.data);
     };
- 
+    
     fetchData();
   }, []);
 
@@ -27,12 +31,25 @@ const App = () => {
     setAddCompanyFormOpen(false);
   };
 
-  const handleAddCompanyFormSubmit = (data) => {
-      console.log(data)
-      axios.post('http://localhost:8000/companies', {
-        ...data
-      })
-      setAddCompanyFormOpen(false);
+  const handleCompareCompaniesOpen = () => {
+    setCompareCompaniesOpen(true);
+  };
+
+  const handleCompareCompaniesClose = () => {
+    setCompareCompaniesOpen(false);
+  };
+
+  const handleAddCompanyFormSubmit = async (data, resetForm) => {
+      try {
+        const res = await axios.post(`${API}/companies`, {
+          ...data
+        })
+        setAddCompanyFormOpen(false);
+        setCompanies([...companies, res.data]);
+        resetForm();
+      } catch (e) {
+        alert('There was an error creating the new company, please trye again.')
+      }
   };
 
   return (
@@ -40,17 +57,18 @@ const App = () => {
       <div style={{ height: 500, width: '100%' }}>
         <DataGrid rows={companies} columns={columns} />
       </div>
-      <div>
+      <div style={{ margin: '10px' }}>
         <ButtonGroup disableElevation variant="contained" color="primary">
-          <Button variant="outlined" color="primary" onClick={handleAddCompanyFormOpen}>
+          <Button color="primary" onClick={handleAddCompanyFormOpen}>
             Add Company 
           </Button>
-          <Button variant="outlined" color="primary" onClick={handleAddCompanyFormOpen}>
+          <Button color="primary" onClick={handleCompareCompaniesOpen}>
             Compare
           </Button>
         </ButtonGroup>
       </div>
       <AddCompanyForm handleSubmit={handleAddCompanyFormSubmit} handleClose={handleAddCompanyFormClose} open={isAddCompanyFormOpen}/>
+      <CompareCompanies companies={companies} handleClose={handleCompareCompaniesClose} open={isCompareCompaniesOpen}/>
     </div>
   );
 }

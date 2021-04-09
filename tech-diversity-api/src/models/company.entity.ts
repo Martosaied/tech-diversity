@@ -1,17 +1,17 @@
 import {
+	BeforeInsert,
 	Column,
-	CreateDateColumn,
-	DeleteDateColumn,
 	Entity,
 	PrimaryGeneratedColumn,
 } from 'typeorm';
+import { v4 as uuid } from 'uuid';
 
 @Entity({
 	name: 'techdiversity',
 })
 export class Company {
-    @PrimaryGeneratedColumn()
-    id: number;
+	@PrimaryGeneratedColumn('uuid')
+	id: string;
 
 	@Column({ name: 'Date' })
 	date: string;
@@ -39,6 +39,11 @@ export class Company {
     
 	@Column({ type: 'decimal', name: '% Black' })
     blackRate: number;
+
+	@BeforeInsert()
+	beforeInsert(): void {
+		this.id = uuid();
+	}
 
 	constructor(
         date?: string,

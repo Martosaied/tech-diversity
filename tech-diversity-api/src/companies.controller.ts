@@ -1,7 +1,6 @@
-import { Controller, UseFilters, Post, Body, Get, Param, Put, Delete, Patch } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param, Put, Delete } from '@nestjs/common';
 import { CompanyDto } from './dtos/company.dto';
 import { Company } from './models/company.entity';
-import { CompanyExceptionsFilter } from './filters/companyExceptions-to-http.filter';
 import { CompanyService } from './companies.service';
 
 @Controller('companies')
@@ -10,7 +9,6 @@ export class CompanyController {
 
 	@Post()
 	create(@Body() req: CompanyDto): Promise<Company> {
-    console.log(req)
 		return this.companyService.create(req);
 	}
 
@@ -20,17 +18,17 @@ export class CompanyController {
 	}
 
 	@Get(':id')
-	readOne(@Param('id') id: number): Promise<Company> {
+	readOne(@Param('id') id: string): Promise<Company> {
 		return this.companyService.findById(id);
 	}
 
 	@Put(':id')
-	update(@Param('id') id: number, @Body() req: CompanyDto): Promise<Company> {
+	update(@Param('id') id: string, @Body() req: CompanyDto): Promise<Company> {
 		return this.companyService.update(id, req);
 	}
 
 	@Delete(':id')
-	delete(@Param('id') id: number): Promise<Company> {
+	delete(@Param('id') id: string): Promise<Company> {
 		return this.companyService.delete(id);
 	}
 

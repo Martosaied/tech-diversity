@@ -3502,23 +3502,18 @@
         "affectsGlobalScope": false
       },
       "../src/models/company.entity.ts": {
-        "version": "dba7c1fca23b8d215ce51c3ec30f0a935b21744a346a2f9dc73b8250ffc10028",
-        "signature": "5d7e0af0b0b43b926e51d7c854e7e4b52a31c5aa4da7fb827325891f2b35585c",
-        "affectsGlobalScope": false
-      },
-      "../src/filters/companyExceptions-to-http.filter.ts": {
-        "version": "5c5754a9e9ad41b8dc6f63a7887920300a073d753ee540437804d717966d6c27",
-        "signature": "2ecd6a1498290a9337ad55adb7c437de9d1bcbd83717fc668d1fb608a4bf9206",
+        "version": "bee7aa29bf7e9ede1e77adb6aa0988770b1495c42ed5618ac0ded6b072b3574f",
+        "signature": "9de477aeecaa527ab0eb616636765884efe34b6da74a8399d2e955ab844b28ee",
         "affectsGlobalScope": false
       },
       "../src/companies.service.ts": {
-        "version": "e97bd3f0e509d933b60d33eadf87e4ed7421efaeddccb9f890cdaf1716c96694",
-        "signature": "c2fd3d80cfef3416e5935e0c19d82c8329f1d4f0719096335bec52ae32f76cf9",
+        "version": "ac9577743ebef5979d44173cce1cfb078bdb6a91cd09a5e22a59372c5a615aa0",
+        "signature": "03521bc2f4a03a7e1ba08efd50909809ed2a6f2e196d0fdd871b727200273936",
         "affectsGlobalScope": false
       },
       "../src/companies.controller.ts": {
-        "version": "ae802004acdbd1d185cbbb0c5a1b7b87603221774f47957512769d4a1b697e9e",
-        "signature": "1103d24c906c03118add37f2589a17df803374ed27e77b1658de65ce51625581",
+        "version": "b61e6e470649cd0fa1a439f806fd2f65a2038623fd132a8aead72d1a9a41d18a",
+        "signature": "a201243a3260f827fd3b546f81d1b330bfbcecd44a392263554c3714cd3ac7cd",
         "affectsGlobalScope": false
       },
       "../src/companies.module.ts": {
@@ -3527,7 +3522,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "efe7b81a2e8582bfc2d519751ed94f2d7075649ff8f1564dbb153c4e21df5624",
+        "version": "dca3b95d40009686bb1638fe390eaf525ac8e7ac06d34cb79ca5ea627b91c55d",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -3716,13 +3711,8 @@
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
-      "../src/rdbs/typeorm.config.ts": {
-        "version": "cf9118c6d815b2911c009c7c7a00ce64a47680b7014023e5d3eed4dead30b3a9",
-        "signature": "0b49ae7eee69336f952e1bd21f7b4dd0fb36339efeadc8a10d339195dc6b60b9",
-        "affectsGlobalScope": false
-      },
       "../src/rdbs/migrations/1617924799815-Init.ts": {
-        "version": "523a20f9d6a47f83f65eb3f73a76252e49a1bd6a829225258b111d5ed624a75c",
+        "version": "2da7387910f03f2f0907057879e87cfa6c2124a4f057b98abd0bc34574d7ec88",
         "signature": "325c5078649e87299e2820c22fb54d83e7fb5b6365ded6a221aac74c40fb1e9c",
         "affectsGlobalScope": false
       },
@@ -7219,7 +7209,6 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/companies.service.ts",
         "../src/dtos/company.dto.ts",
-        "../src/filters/companyExceptions-to-http.filter.ts",
         "../src/models/company.entity.ts"
       ],
       "../src/companies.module.ts": [
@@ -7239,9 +7228,6 @@
       "../src/dtos/company.dto.ts": [
         "../node_modules/class-validator/types/index.d.ts"
       ],
-      "../src/filters/companyExceptions-to-http.filter.ts": [
-        "../node_modules/@nestjs/common/index.d.ts"
-      ],
       "../src/main.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/core/index.d.ts",
@@ -7252,10 +7238,6 @@
       ],
       "../src/rdbs/migrations/1617924799815-Init.ts": [
         "../node_modules/typeorm/index.d.ts"
-      ],
-      "../src/rdbs/typeorm.config.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/typeorm/index.d.ts"
       ]
     },
     "exportedModulesMap": {
@@ -10286,14 +10268,8 @@
         "../src/dtos/company.dto.ts",
         "../src/models/company.entity.ts"
       ],
-      "../src/filters/companyExceptions-to-http.filter.ts": [
-        "../node_modules/@nestjs/common/index.d.ts"
-      ],
       "../src/rdbs/migrations/1617924799815-Init.ts": [
         "../node_modules/typeorm/index.d.ts"
-      ],
-      "../src/rdbs/typeorm.config.ts": [
-        "../node_modules/@nestjs/typeorm/index.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": []

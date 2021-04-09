@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CompanyDto } from './dtos/company.dto';
@@ -27,7 +27,7 @@ export class CompanyService {
 
 	}
 
-	async findById(id: number): Promise<Company> {
+	async findById(id: string): Promise<Company> {
 		const company = await this.companyRepository.findOne({id});
 		return company;
 	}
@@ -37,7 +37,7 @@ export class CompanyService {
 		return companies;
   }
   
-  async update(id: number, data: CompanyDto): Promise<Company> {
+  async update(id: string, data: CompanyDto): Promise<Company> {
     const company = new Company(
 			data.date,
 			data.company,
@@ -53,7 +53,7 @@ export class CompanyService {
 		return this.companyRepository.save(company);
 	}
 
-	async delete(id: number): Promise<Company> {
+	async delete(id: string): Promise<Company> {
 		const company = await this.findById(id);
 		return this.companyRepository.softRemove(company);
 	}

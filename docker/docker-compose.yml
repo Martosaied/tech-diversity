@@ -1,13 +1,29 @@
 version: '3'
 
 services:
-  database:
+  tech-diversity-web:
+    build: ../tech-diversity-client
+    container_name: tech-diversity-web
+    ports:
+      - '3000:3000'
+    depends_on:
+      - tech-diversity-api
+      
+  tech-diversity-api:
+    build: ../tech-diversity-api
+    container_name: tech-diversity-api
+    ports:
+      - '8000:8000'
+    links:
+      - tech-diversity-db
+    depends_on:
+      - tech-diversity-db
+
+  tech-diversity-db:
     container_name: tech-diversity-db
-    image: "postgres"
-    environment:
-        - POSTGRES_DB=tech_diversity
-        - POSTGRES_USER=postgres
-        - POSTGRES_PASSWORD=supersecretpassword
+    image: postgres:alpine
+    env_file:
+      - database.env
     volumes:
       - database-data:/var/lib/postgresql/data/
 

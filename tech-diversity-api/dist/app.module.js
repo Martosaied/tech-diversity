@@ -19,7 +19,7 @@ AppModule = __decorate([
             companies_module_1.CompaniesModule,
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'postgres',
-                host: 'localhost',
+                host: 'tech-diversity-db',
                 port: 5432,
                 entities: [company_entity_1.Company],
                 username: 'root',

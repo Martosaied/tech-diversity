@@ -21,7 +21,6 @@ let CompanyController = class CompanyController {
         this.companyService = companyService;
     }
     create(req) {
-        console.log(req);
         return this.companyService.create(req);
     }
     read() {
@@ -54,21 +53,21 @@ __decorate([
     common_1.Get(':id'),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
+    __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], CompanyController.prototype, "readOne", null);
 __decorate([
     common_1.Put(':id'),
     __param(0, common_1.Param('id')), __param(1, common_1.Body()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, company_dto_1.CompanyDto]),
+    __metadata("design:paramtypes", [String, company_dto_1.CompanyDto]),
     __metadata("design:returntype", Promise)
 ], CompanyController.prototype, "update", null);
 __decorate([
     common_1.Delete(':id'),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
+    __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], CompanyController.prototype, "delete", null);
 CompanyController = __decorate([

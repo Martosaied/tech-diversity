@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Company = void 0;
 const typeorm_1 = require("typeorm");
+const uuid_1 = require("uuid");
 let Company = class Company {
     constructor(date, type, company, femaleRate, maleRate, whiteRate, asianRate, latinoRate, blackRate) {
         this.date = date,
@@ -23,10 +24,13 @@ let Company = class Company {
         this.latinoRate = latinoRate;
         this.blackRate = blackRate;
     }
+    beforeInsert() {
+        this.id = uuid_1.v4();
+    }
 };
 __decorate([
-    typeorm_1.PrimaryGeneratedColumn(),
-    __metadata("design:type", Number)
+    typeorm_1.PrimaryGeneratedColumn('uuid'),
+    __metadata("design:type", String)
 ], Company.prototype, "id", void 0);
 __decorate([
     typeorm_1.Column({ name: 'Date' }),
@@ -64,6 +68,12 @@ __decorate([
     typeorm_1.Column({ type: 'decimal', name: '% Black' }),
     __metadata("design:type", Number)
 ], Company.prototype, "blackRate", void 0);
+__decorate([
+    typeorm_1.BeforeInsert(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], Company.prototype, "beforeInsert", null);
 Company = __decorate([
     typeorm_1.Entity({
         name: 'techdiversity',

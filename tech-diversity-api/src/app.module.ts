@@ -8,7 +8,7 @@ import { Company } from './models/company.entity';
         CompaniesModule,
         TypeOrmModule.forRoot({
             type: 'postgres',
-			host: 'localhost',
+			host: 'tech-diversity-db',
 			port: 5432,
 			entities: [Company],
 			username: 'root',
